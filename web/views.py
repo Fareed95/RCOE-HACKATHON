@@ -27,7 +27,7 @@ def register_view(request):
             login(request,user)
             return redirect('dashboard')
     else:
-        initial_data = {'username':'', 'password1':'','password2':""}
+        initial_data = {'firstname ':'','username':'', 'password1':'','password2':""}
         form = UserCreationForm(initial=initial_data)
     return render(request, 'studentauth/register.html',{'form':form})
 

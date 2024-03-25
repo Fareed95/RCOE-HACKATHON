@@ -8,6 +8,13 @@
         <form method="POST" action="{% url 'register' %}">
             {% csrf_token %}
             <div class="form-group">
+                <label for="{{ form.firstname.id_for_label}}">firstname:</label>
+                <input type="text" name="{{ form.firstname.name }}" class="form-control" value="{{ form.firstname.value}}" />
+                {% if form.firstname.errors %}
+                <span class="text-danger">{{ form.firstname.errors }}</span>
+                {% endif %}
+
+            <div class="form-group">
                 <label for="{{ form.username.id_for_label}}">Username:</label>
                 <input type="text" name="{{ form.username.name }}" class="form-control" value="{{ form.username.value}}" />
                 {% if form.username.errors %}
