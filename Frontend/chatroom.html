@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatroom</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .chat-message {
+      max-width: 70%;
+    }
+
+    #message {
+      flex-grow: 1;  /* Make the input element expand to fill available space */
+    }
+  </style>
+</head>
+<body class="bg-gray-800">
+  <div class="flex h-screen">
+    <div class="w-64 bg-gray-600 shadow-md p-4 flex flex-col">
+      <h1 class="text-xl font-bold text-center mb-4 text-white">Chatroom</h1>
+      <ul id="users-list" class="space-y-2 overflow-y-auto flex-grow"></ul>
+      <form id="user-form" class="mt-4 flex items-center">
+                <button type="submit" class=" mx-auto my-10 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg">Leave Chat</button>
+      </form>
+    </div>
+
+    <div class="flex-grow flex flex-col overflow-y-auto p-4 bg-gray-900">
+      <h2 id="chat-title" class="text-xl font-bold text-center mb-4 text-white">Welcome to the Chatroom!</h2>
+      <div id="chat-messages" class="flex flex-col space-y-2 ">
+        </div>
+
+
+        <div class="flex items-start gap-2.5 mt-16">
+          <img class="w-8 h-8 rounded-full" src="./undraw_pic_profile_re_7g2h.svg" alt="Jese image">
+          <div class="flex flex-col  max-w-[320px] leading-1.5 p-4 border-gray-200 bg-gray-700 rounded-xl rounded-es-xl w-5/12">
+             <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                <span class="text-sm font-semibold text-white">Bonnie Green</span>
+                <span class="text-sm font-normal text-gray-400">11:46</span>
+             </div>
+             <p class="text-sm font-normal py-2.5 text-white">That's awesome. I think our users will really appreciate the improvements.</p>
+             <span class="text-sm font-normal text-gray-400">Delivered</span>
+          </div>
+        
+       </div>
+       
+
+
+
+
+       <div class="flex items-start justify-end gap-2.5 mt-16">
+        <div class="flex flex-col max-w-[320px] leading-1.5 p-4 border-gray-200 bg-gray-700 rounded-xl rounded-es-xl w-5/12">
+            <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                <span class="text-sm font-semibold text-white">Bonnie Green</span>
+                <span class="text-sm font-normal text-gray-400">11:46</span>
+            </div>
+            <p class="text-sm font-normal py-2.5 text-white">That's awesome. I think our users will really appreciate the improvements.</p>
+            <span class="text-sm font-normal text-gray-400">Delivered</span>
+        </div>    
+            <img class="w-8 h-8 rounded-full" src="./undraw_pic_profile_re_7g2h.svg" alt="Jese image">
+
+    </div>
+    
+     
+
+
+
+      <form id="message-form" class=" bottom-0 fixed  bg-gray-900 p-4 flex items-center w-10/12 ">
+        <input type="text" id="message" placeholder="Type your message..." class="flex-grow  border  rounded-lg px-3 py-2 focus:ring-grey-500 focus:border-grey-600 bg-gray-700 border-gray-600 placeholder-gray-400 mr-2 ">
+        <button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Send</button>
+      </form>
+      
+      
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+</html>
