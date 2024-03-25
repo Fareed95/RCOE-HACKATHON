@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+}
+html,body{
+    width: 100%;
+    height: 100%;   
+}
+#nav{
+
+}
+#dasboard{
+    width:  30vh;
+    height: 50vh;
+}
+#dasboard span{
+    font-size: 3vh;
+    padding-left: 1.5vw;
+}
+
+#graph_1{
+   position: absolute;
+   top:9vh;
+   left:15vw;
+   width: 60vw;
+   height: 17vh;
+   padding: 0vw 1vh;
+}
+
+#graph_1 h5{
+    font-size: 4vh;
+}
+#graph_1 p{
+    padding-top: 2vh;
+    font-size: 4vh;
+}
+#graph_1 button{
+    padding-top: 1.2vh;
+}
+
+#graph_1 span{
+  color: white;
+}
+
+#chats{
+    position: absolute;
+    top:9vh;
+    right:1vw;
+    width: 23vw;
+    height: 70vh;
+}
+
+
+#chats h5{
+    font-size: 9.1vh;
+}
+
+#chats p{
+  font-size: 2vh;
+}
+
+#trending_mentors{
+    position: absolute;
+    height:fit-content;
+    top: 72vh;
+    right: 1vw;
+}
+
+
+
+#trending_mentors #title{
+    font-size: 6vh;
+    color: white;
+    font-weight: 700;
+}
+
+/* #trending_mentors span{
+    padding-top: 1vh;
+    font-size: 6vh;
+} */
+
+.swiper {
+  width: 83vw;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#pie_chart{
+  position: absolute;
+  right: 1vw;
+  top: 105vh;
+}
+
+#pie_chart h5{
+  font-size: 3vh;
+}
+
+#pie_chart label{
+  font-size: 4vh;
+  margin: 2vh 2vh;
+
+}
+
+#prev_chats{
+  width: 52vw;
+  height: 57vh;
+  top: 105vh;
+  left:15vw;
+  position: absolute;
+  border: 5px solid black;
+}
+
+/* #footer{
+  position: absolute;
+  width: 100vh;
+  top:170vh
+}
+
+#footer span{
+  font-size: 6vh;
+}
+
+#footer a{
+  font-size: 4vh;
+} */
