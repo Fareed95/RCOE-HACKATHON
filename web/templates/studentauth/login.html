@@ -15,8 +15,8 @@
 
     <div class="container mx-auto max-w-md space-y-8">
       <h1 class="text-3xl font-bold text-white text-center">Sign In</h1>
-      <form class="space-y-9 border border-white p-4  rounded-3xl" action="#">
-        
+      <form class="space-y-9 border border-white p-4  rounded-3xl" method="post">
+        {% csrf_token %}
         <div>
             <label for="username" class="block mb-2 text-sm font-medium text-gray-300">User name</label>
             <input type="text" name="username" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="username" required="">
@@ -41,7 +41,7 @@
     </form>
     
       <p class="text-sm text-center text-gray-300 dark:text-gray-500">
-        <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500"> Don't have an account?</a>
+        <a href="{% url 'signup' %}" class="font-medium text-primary-600 hover:underline dark:text-primary-500"> Don't have an account?</a>
       </p>
 
       </div>      <div class="h-full w-1/2 bg-white"> <section class="bg-blue-400 text-white ">
