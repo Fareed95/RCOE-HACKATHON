@@ -1,15 +1,12 @@
 from django.shortcuts import render,redirect
-from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
-from django.contrib.auth import login, logout
-from .middlewares import auth, guest
+from django.http import HttpResponse
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
     return render(request,'home.html')
-
-def student_login_view(request):
-    # Implement your student login logic here
-    return render(request, 'studentauth/register.html')
 
 def mentor_login_view(request):
     # Implement your mentor login logic here
@@ -18,36 +15,44 @@ def mentor_login_view(request):
 def apply_for_mentor_view(request):
     # Implement your apply for mentor logic here
     return render(request, 'apply_for_mentor.html')
-@guest
-def register_view(request):
+
+@login_required(login_url='login')
+def HomePage(request):
+    return render (request,'studentauth/dashboard.html')
+
+def SignupPage(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        uname = request.POST.get('username')
+        email = request.POST.get('email')
+        pass1 = request.POST.get('password1')
+        pass2 = request.POST.get('password2')
+
+        if pass1 != pass2:
+            return HttpResponse("Your password and confirm password are not the same!!")
+        else:
+            # Create the user with keyword arguments
+            my_user = User.objects.create_user(username=uname, email=email, password=pass1, first_name=first_name, last_name=last_name)
+            my_user.save()
+            return redirect('login')
+
+    return render(request, 'studentauth/register.html')
+
+
+def LoginPage(request):
+    if request.method=='POST':
+        username=request.POST.get('username')
+        pass1=request.POST.get('pass')
+        user=authenticate(request,username=username,password=pass1)
+        if user is not None:
             login(request,user)
-            return redirect('dashboard')
-    else:
-        initial_data = {'firstname ':'','username':'', 'password1':'','password2':""}
-        form = UserCreationForm(initial=initial_data)
-    return render(request, 'studentauth/register.html',{'form':form})
+            return redirect('student_login')
+        else:
+            return HttpResponse ("Username or Password is incorrect!!!")
 
-@guest
-def login_view(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            user = form.get_user()
-            login(request,user)
-            return redirect('dashboard')
-    else:
-        initial_data = {'username':'', 'password':''}
-        form = AuthenticationForm(initial=initial_data)
-    return render(request, 'studentauth/login.html',{'form':form}) 
+    return render (request,'login.html')
 
-@auth
-def dashboard_view(request):
-    return render(request, 'studentauth/dashboard.html')
-
-def logout_view(request):
+def LogoutPage(request):
     logout(request)
     return redirect('login')
