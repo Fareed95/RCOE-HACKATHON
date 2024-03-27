@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="landing_page.css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body class="bg-gray-900">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+    <div id="nav">
+        <nav class=" border-gray-200   bg-gray-800 sticky z-10 top-0 ">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+             
+                  
+                  <span class="self-center text-2xl font-semibold whitespace-nowrap   text-white"></span>
+              </a>
+              <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm  rounded-lg md:hidden  focus:outline-none focus:ring-2 focus:ring-gray-200   text-gray-400   hover:bg-gray-700   aria-controls="navbar-default" aria-expanded="false">
+                  <span class="sr-only">Open main menu</span>
+                  <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                  </svg>
+              </button>
+              <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border  rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0    md:bg-gray-800   border-gray-700">
+                  <li>
+                    <a href="#" class="block py-2 px-3  bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0    md:  text-blue-500" aria-current="page">Home</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-2 px-3  rounded  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0   text-white md:    hover:bg-gray-700   hover:text-white md:  hover:bg-transparent">Log In</a>
+                  </li>
+                  <!-- <li>
+                    <a href="#" class="block py-2 px-3  rounded  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0   text-white md:     hover:bg-gray-700   hover:text-white md:  hover:bg-transparent">Services</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-2 px-3 rounded  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0   text-white md:     hover:bg-gray-700   hover:text-white md:  hover:bg-transparent">Pricing</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-2 px-3  rounded  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0   text-white md:     hover:bg-gray-700   hover:text-white md:  hover:bg-transparent">Contact</a>
+                  </li> -->
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </div>
+
+    <div id="dashboard">
+        <!-- drawer component -->
+       <div id="drawer-disable-body-scrolling" class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full w-64  bg-gray-800" tabindex="-1" aria-labelledby="drawer-disable-body-scrolling-label">
+        <h5 id="drawer-disable-body-scrolling-label" class="text-base text-2xl font-semibold  uppercase text-white ">Mentor</h5>
+        
+      <div class="py-4 overflow-y-auto">
+          <ul class="space-y-2 font-medium">
+             <li>
+                <a href="#" class="flex items-center p-2 rounded-lg  text-white h  hover:bg-gray-700 group">
+                   <svg class="w-5 h-5 transition duration-75  text-gray-400   group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
+                      <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"/>
+                      <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"/>
+                   </svg>
+                   <span class="ms-3">Mentor Dashboard</span>
+                </a>
+             </li>
+             <li>
+                <!-- <button type="button" class="flex items-center w-full p-2 text-base  transition duration-75 rounded-lg group  text-white  hover:bg-gray-700" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                      <svg class="flex-shrink-0 w-5 h-5  transition duration-75   text-gray-400  group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                         <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+                      </svg> 
+                       <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">E-commerce</span> 
+                      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                      </svg> 
+                </button> -->
+                <!-- <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                      <li>
+                         <a href="#" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group   text-white  hover:bg-gray-700">Products</a>
+                      </li>
+                      <li>
+                         <a href="#" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group   text-white  hover:bg-gray-700">Billing</a>
+                      </li>
+                      <li>
+                         <a href="#" class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group   text-white  hover:bg-gray-700">Invoice</a>
+                      </li>
+                </ul> -->
+             </li>
+             <!-- <li>
+                <a href="#" class="flex items-center p-2  rounded-lg  text-white   hover:bg-gray-700 group">
+                   <svg class="flex-shrink-0 w-5 h-5  transition duration-75  text-gray-400  group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
+                      <path d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z"/>
+                   </svg>
+                   <span class="flex-1 ms-3 whitespace-nowrap">Kanban</span>
+                   <span class="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium   rounded-full  bg-gray-700  text-gray-300">Pro</span>
+                </a>
+             </li> -->
+             <!-- <li>
+                <a href="#" class="flex items-center p-2  rounded-lg  text-white   hover:bg-gray-700 group">
+                   <svg class="flex-shrink-0 w-5 h-5  transition duration-75  text-gray-400   group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z"/>
+                   </svg>
+                   <span class="flex-1 ms-3 whitespace-nowrap">Inbox</span>
+                   <span class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium   rounded-full  bg-blue-900  text-blue-300">3</span>
+                </a>
+             </li> -->
+             <li>
+                <a href="#" class="flex items-center p-2  rounded-lg  text-white   hover:bg-gray-700 group">
+                   <svg class="flex-shrink-0 w-5 h-5  transition duration-75  text-gray-400  group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
+                      <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z"/>
+                   </svg>
+                   <span class="flex-1 ms-3 whitespace-nowrap">Profile</span>
+                </a>
+             </li>
+             <!-- <li>
+                <a href="#" class="flex items-center p-2  rounded-lg  text-white   hover:bg-gray-700 group">
+                   <svg class="flex-shrink-0 w-5 h-5  transition duration-75  text-gray-400  group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                      <path d="M17 5.923A1 1 0 0 0 16 5h-3V4a4 4 0 1 0-8 0v1H2a1 1 0 0 0-1 .923L.086 17.846A2 2 0 0 0 2.08 20h13.84a2 2 0 0 0 1.994-2.153L17 5.923ZM7 9a1 1 0 0 1-2 0V7h2v2Zm0-5a2 2 0 1 1 4 0v1H7V4Zm6 5a1 1 0 1 1-2 0V7h2v2Z"/>
+                   </svg>
+                   <span class="flex-1 ms-3 whitespace-nowrap">Products</span>
+                </a>
+             </li> -->
+             <li>
+                <a href="#" class="flex items-center p-2  rounded-lg  text-white   hover:bg-gray-700 group">
+                   <svg class="flex-shrink-0 w-5 h-5  transition duration-75  text-gray-400   group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"/>
+                   </svg>
+                   <span class="flex-1 ms-3 whitespace-nowrap">Log In</span>
+                </a>
+             </li>
+             <li>
+                <a href="#" class="flex items-center p-2 rounded-lg  text-white   hover:bg-gray-700 group">
+                   <svg class="flex-shrink-0 w-5 h-5  transition duration-75  text-gray-400  group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.96 2.96 0 0 0 .13 5H5Z"/>
+                      <path d="M6.737 11.061a2.961 2.961 0 0 1 .81-1.515l6.117-6.116A4.839 4.839 0 0 1 16 2.141V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H0v11a1.969 1.969 0 0 0 1.933 2h12.134A1.97 1.97 0 0 0 16 18v-3.093l-1.546 1.546c-.413.413-.94.695-1.513.81l-3.4.679a2.947 2.947 0 0 1-1.85-.227 2.96 2.96 0 0 1-1.635-3.257l.681-3.397Z"/>
+                      <path d="M8.961 16a.93.93 0 0 0 .189-.019l3.4-.679a.961.961 0 0 0 .49-.263l6.118-6.117a2.884 2.884 0 0 0-4.079-4.078l-6.117 6.117a.96.96 0 0 0-.263.491l-.679 3.4A.961.961 0 0 0 8.961 16Zm7.477-9.8a.958.958 0 0 1 .68-.281.961.961 0 0 1 .682 1.644l-.315.315-1.36-1.36.313-.318Zm-5.911 5.911 4.236-4.236 1.359 1.359-4.236 4.237-1.7.339.341-1.699Z"/>
+                   </svg>
+                   <span class="flex-1 ms-3 whitespace-nowrap">Sign Up</span>
+                </a>
+             </li>
+          </ul>
+       </div>
+      
+      
+      </div>
+      </div>
+
+    <div id="hero">
+        <div id="slider">
+              <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <h1>Connecting Ambitions with Experience</h1>
+        <img src="m2.jpg" alt="">
+        
+      </div>
+      <div class="swiper-slide">
+        <h1>Personalized Mentorship for Success</h1>
+        <img src="m1.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <h1>Empowering Tomorrow's Leaders</h1>
+        <img src="m3.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <h1>Pathway to Professional Excellence</h1>
+        <img src="m4.jpg" alt="">
+      </div>
+    </div>
+    <!-- <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div> -->
+    <div class="swiper-pagination"></div>
+  </div>
+        </div>
+         <!-- Swiper -->
+
+    </div>  
+
+
+<div id="chart_chat">
+    <div class="content ml-72 m-5">
+
+
+
+        <div class="firstline flex   ">
+        
+        
+        
+        
+        
+        <!-- chart is here -->
+              <div class="w-8/12   rounded-lg shadow  bg-gray-800 p-4 md:p-6 m-5 ">
+                <div class="flex justify-between mb-5">
+                  <div class="grid gap-4 grid-cols-2">
+                    <div>
+                      <h5 class="inline-flex items-center   text-gray-400 leading-none font-normal mb-2">Study hours
+                       
+                        <div data-popover id="clicks-info" role="tooltip" class="absolute z-10 invisible inline-block text-sm  transition-opacity duration-300  border  rounded-lg shadow-sm opacity-0 w-72  bg-gray-800  border-gray-600  text-gray-400">
+                            
+                            <div data-popper-arrow></div>
+                        </div>
+                      </h5>
+                      <p class=" text-white text-2xl leading-none font-bold">8 Hrs</p>
+                    </div>
+                    <div>
+                      <h5 class="inline-flex items-center   text-gray-400 leading-none font-normal mb-2">Score
+                      
+                        <div data-popover id="cpc-info" role="tooltip" class="absolute z-10 invisible inline-block text-sm  transition-opacity duration-300  border   text-gray-400">
+                            
+                            <div data-popper-arrow></div>
+                        </div>
+                      </h5>
+                      <p class="  text-white text-2xl leading-none font-bold">8.5 Marks</p>
+                    </div>
+                  </div>
+                  <div>
+                    <button id="dropdownDefaultButton"
+                      data-dropdown-toggle="lastDaysdropdown"
+                      data-dropdown-placement="bottom" type="button" class="px-3 py-2 inline-flex items-center text-sm font-medium  focus:outline-none ounded-lg border    focus:z-10 focus:ring-4  focus:ring-gray-700  bg-gray-800  text-gray-400  border-gray-600  hover:text-white  hover:bg-gray-700">Last week <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                  </svg></button>
+                  <div id="lastDaysdropdown" class="z-10 hidden  divide-y divide-gray-100 rounded-lg shadow w-44  bg-gray-700">
+                        <ul class="py-2 text-sm   text-gray-200" aria-labelledby="dropdownDefaultButton">
+                          <li>
+                            <a href="#" class="block px-4 py-2   hover:bg-gray-600  hover:text-white">Yesterday</a>
+                          </li>
+                          <li>
+                            <a href="#" class="block px-4 py-2  hover:bg-gray-600  hover:text-white">Today</a>
+                          </li>
+                          <li>
+                            <a href="#" class="block px-4 py-2   hover:bg-gray-600  hover:text-white">Last 7 days</a>
+                          </li>
+                          <li>
+                            <a href="#" class="block px-4 py-2   hover:bg-gray-600  hover:text-white">Last 30 days</a>
+                          </li>
+                          <li>
+                            <a href="#" class="block px-4 py-2   hover:bg-gray-600  hover:text-white">Last 90 days</a>
+                          </li>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+                <div id="line-chart"></div>
+                <div class="grid grid-cols-1 items-center  border-t  border-gray-700 justify-between mt-2.5">
+                  <div class="pt-5">      
+                    <a href="#" class="px-5 py-2.5 text-sm font-medium text-white inline-flex items-center  focus:ring-4 focus:outline-none  rounded-lg text-center  bg-blue-600  hover:bg-blue-700  focus:ring-blue-800">
+                      <svg class="w-3.5 h-3.5 text-white me-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 20">
+                        <path d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2Zm-3 15H4.828a1 1 0 0 1 0-2h6.238a1 1 0 0 1 0 2Zm0-4H4.828a1 1 0 0 1 0-2h6.238a1 1 0 1 1 0 2Z"/>
+                        <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z"/>
+                      </svg>
+                      View full report
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- to here -->
+        
+        
+        
+        
+        
+        <!-- my mentor -->
+              <div id="chats " class="w-4/12 ">
+                <div class=" max-w-md p-4  border  rounded-lg shadow sm:p-8  bg-gray-800  border-gray-700 mt-5 ">
+            <div class="flex items-center justify-between mb-4">
+                <h5 class="text-xl font-bold leading-none   text-white">My Mentors</h5>
+                <a href="#" class="text-sm font-medium  hover:underline  text-blue-500">
+                    View all
+                </a>
+           </div>
+           <div class="flow-root">
+                <ul role="list" class="divide-y   divide-gray-700">
+                    <li class="py-3 sm:py-4">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <img class="w-8 h-8 rounded-full" src="./undraw_pic_profile_re_7g2h.svg" alt="Neil image">
+                            </div>
+                            <div class="flex-1 min-w-0 ms-4">
+                                <p class="text-sm font-medium  truncate  text-white">
+                                    Neil Sims
+                                </p>
+                                <p class="text-sm  truncate  text-gray-400">
+                                    email@windster.com
+                                </p>
+                            </div>
+                            <div class="inline-flex items-center text-base font-semibold   text-white">
+                                
+                            </div>
+                        </div>
+                    </li>
+                    <li class="py-3 sm:py-4">
+                        <div class="flex items-center ">
+                            <div class="flex-shrink-0">
+                                <img class="w-8 h-8 rounded-full" src="./undraw_pic_profile_re_7g2h.svg" alt="Bonnie image">
+                            </div>
+                            <div class="flex-1 min-w-0 ms-4">
+                                <p class="text-sm font-medium  truncate  text-white">
+                                    Bonnie Green
+                                </p>
+                                <p class="text-sm  truncate  text-gray-400">
+                                    email@windster.com
+                                </p>
+                            </div>
+                            <div class="inline-flex items-center text-base font-semibold  text-white">
+                                
+                            </div>
+                        </div>
+                    </li>
+                    <li class="py-3 sm:py-4">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <img class="w-8 h-8 rounded-full" src="./undraw_pic_profile_re_7g2h.svg" alt="Michael image">
+                            </div>
+                            <div class="flex-1 min-w-0 ms-4">
+                                <p class="text-sm font-medium  truncate  text-white">
+                                    Michael Gough
+                                </p>
+                                <p class="text-sm  truncate  text-gray-400">
+                                    email@windster.com
+                                </p>
+                            </div>
+                            <div class="inline-flex items-center text-base font-semibold   text-white">
+                                
+                            </div>
+                        </div>
+                    </li>
+                    <li class="py-3 sm:py-4">
+                        <div class="flex items-center ">
+                            <div class="flex-shrink-0">
+                                <img class="w-8 h-8 rounded-full" src="./undraw_pic_profile_re_7g2h.svg" alt="Lana image">
+                            </div>
+                            <div class="flex-1 min-w-0 ms-4">
+                                <p class="text-sm font-medium  truncate  text-white">
+                                    Lana Byrd
+                                </p>
+                                <p class="text-sm  truncate  text-gray-400">
+                                    email@windster.com
+                                </p>
+                            </div>
+                            <div class="inline-flex items-center text-base font-semibold   text-white">
+                                
+                            </div>
+                        </div>
+                    </li>
+                    <li class="pt-3 pb-0 sm:pt-4">
+                        <div class="flex items-center ">
+                            <div class="flex-shrink-0">
+                                <img class="w-8 h-8 rounded-full" src="./undraw_pic_profile_re_7g2h.svg" alt="Thomas image">
+                            </div>
+                            <div class="flex-1 min-w-0 ms-4">
+                                <p class="text-sm font-medium  truncate  text-white">
+                                    Thomes Lean
+                                </p>
+                                <p class="text-sm  truncate  text-gray-400">
+                                    email@windster.com
+                                </p>
+                            </div>
+                            <div class="inline-flex items-center text-base font-semibold  text-white">
+                               
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+           </div>
+                </div>
+              </div>
+        
+        
+        
+            </div>
+        
+        </div>
+        </div>
+        
+        
+        
+        
+        <div class="content ml-72 m-5">
+        </div>
+</div>
+
+<div class="content  mt-5">
+    <div class="thirdline flex  ">
+  
+  
+  
+  
+    <div id="cc">
+      
+    </div>
+      <div class=" p-6  border  rounded-lg shadow  bg-gray-800  border-gray-700 w-full mr-10">
+        <a href="#">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight   text-white">Common chat room</h5>
+        </a>
+        
+        <div class="flex items-start gap-2.5 mt-5 ">
+          <img class="w-8 h-8 rounded-full" src="./undraw_pic_profile_re_7g2h.svg" alt="Jese image">
+          <div class="flex flex-col  max-w-[320px] leading-1.5 p-4 border-gray-200 bg-gray-700 rounded-xl rounded-es-xl w-5/12">
+             <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                <span class="text-sm font-semibold text-white">Alexander Wilson</span>
+                <span class="text-sm font-normal text-gray-400">11:46</span>
+             </div>
+             <p class="text-sm font-normal py-2.5 text-white">That's awesome. I think our users will really appreciate the improvements.</p>
+             <span class="text-sm font-normal text-gray-400">Delivered</span>
+          </div>
+        
+       </div>
+  
+       <div class="flex items-start gap-2.5 mt-5 ">
+        <img class="w-8 h-8 rounded-full" src="./undraw_pic_profile_re_7g2h.svg" alt="Jese image">
+        <div class="flex flex-col  max-w-[320px] leading-1.5 p-4 border-gray-200 bg-gray-700 rounded-xl rounded-es-xl w-5/12">
+           <div class="flex items-center space-x-2 rtl:space-x-reverse">
+              <span class="text-sm font-semibold text-white">James Smith</span>
+              <span class="text-sm font-normal text-gray-400">11:50</span>
+           </div>
+           <p class="text-sm font-normal py-2.5 text-white">Yes it is! And they will for sure.</p>
+           <span class="text-sm font-normal text-gray-400">Delivered</span>
+        </div>
+      
+     </div>
+    
+     
+     <div class="flex align-bottom"></div><!-- This will push the next div to the bottom -->
+    
+     <div class="mb-1">
+      
+      <input type="text" id="default-input" class=" border mt-24  text-sm rounded-lg   block w-full p-2.5  bg-gray-700  border-gray-600  placeholder-gray-400  text-white  focus:ring-blue-500  focus:border-blue-500" placeholder="Enter your Text">
+  </div>
+  
+  
+    </div>
+    <div class="w-6/12  rounded-lg shadow  bg-gray-800 p-4 md:p-6">
+  
+      <div class="flex justify-between items-start w-full">
+          <div class="flex-col items-center">
+            <div class="flex items-center mb-1">
+                <h5 class="text-xl font-bold leading-none   text-white me-1">Time given to Subjects</h5>
+                
+          </div>
+          <button id="dateRangeButton" data-dropdown-toggle="dateRangeDropdown" data-dropdown-ignore-click-outside-class="datepicker" type="button" class="inline-flex items-center   text-blue-600 font-medium hover:underline">27 Mar -28 Mar <svg class="w-3 h-3 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+            </svg>
+          </button>
+          <div id="dateRangeDropdown" class="z-10 hidden  divide-y  rounded-lg shadow w-80 lg:w-96  bg-gray-700  divide-gray-600">
+              <div class="p-3" aria-labelledby="dateRangeButton">
+                <div date-rangepicker datepicker-autohide class="flex items-center">
+                    <div class="relative">
+                      <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                          <!-- <svg class="w-4 h-4  text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                          </svg> -->
+                      </div>
+                      <input name="start" type="text" class=" border   text-sm rounded-lg   block w-full ps-10 p-2.5   bg-gray-700  border-gray-600  placeholder-gray-400  text-white  focus:ring-blue-500  focus:border-blue-500" placeholder="Start date">
+                    </div>
+                    <span class="mx-2   text-gray-400">to</span>
+                    <div class="relative">
+                      <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                          <svg class="w-4 h-4   text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                          </svg>
+                      </div>
+                      <input name="end" type="text" class="border   text-sm rounded-lg   block w-full ps-10 p-2.5   bg-gray-700  border-gray-600  placeholder-gray-400  text-white  focus:ring-blue-500  focus:border-blue-500" placeholder="End date">
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        
+      </div>
+  
+  
+  
+    
+      <!-- Line Chart -->
+      <div class="py-6" id="pie-chart"></div>
+    
+      <div class="grid grid-cols-1 items-center  border-t  border-gray-700 justify-between">
+        <div class="flex justify-between items-center pt-5">
+          <!-- Button -->
+          <button
+            id="dropdownDefaultButton"
+            data-dropdown-toggle="lastDaysdropdown"
+            data-dropdown-placement="bottom"
+            class="text-sm font-medium   text-gray-400  text-center inline-flex items-center  hover:text-white"
+            type="button">
+            Last 7 days
+            <svg class="w-2.5 m-2.5 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+            </svg>
+          </button>
+          <div id="lastDaysdropdown" class="z-10 hidden  divide-y divide-gray-100 rounded-lg shadow w-44  bg-gray-700">
+              <ul class="py-2 text-sm  text-gray-200" aria-labelledby="dropdownDefaultButton">
+                <li>
+                  <a href="#" class="block px-4 py-2   hover:bg-gray-600  hover:text-white">Yesterday</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2   hover:bg-gray-600  hover:text-white">Today</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2   hover:bg-gray-600  hover:text-white">Last 7 days</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2   hover:bg-gray-600  hover:text-white">Last 30 days</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2   hover:bg-gray-600  hover:text-white">Last 90 days</a>
+                </li>
+              </ul>
+          </div>
+          <a
+            href="#"
+            class="uppercase text-sm font-semibold inline-flex items-center rounded-lg text-blue-600  hover:text-blue-500    hover:bg-gray-700  focus:ring-gray-700  border-gray-700 px-3 py-2">
+            Get Report
+            <svg class="w-2.5 h-2.5 ms-1.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+  
+  </div>
+
+  <footer id="footer" class=" rounded-lg shadow  bg-gray-900 m-4">
+    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+               
+                <span class="self-center text-2xl font-semibold whitespace-nowrap  text-white">Mentor</span>
+            </a>
+            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium  sm:mb-0  text-gray-400">
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">About</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <hr class="my-6  sm:mx-auto  border-gray-700 lg:my-8" />
+        <span class="block text-sm  sm:text-center  text-gray-400">© 2023 <a href="#" class="hover:underline">Mentor™</a>. All Rights Reserved.</span>
+    </div>
+  </footer>
+
+
+
+
+
+<!-- script -->
+<script>
+
+    const options = {
+      chart: {
+        height: "100%",
+        maxWidth: "100%",
+        type: "line",
+        fontFamily: "Inter, sans-serif",
+        dropShadow: {
+          enabled: false,
+        },
+        toolbar: {
+          show: false,
+        },
+      },
+      tooltip: {
+        enabled: true,
+        x: {
+          show: false,
+        },
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      stroke: {
+        width: 6,
+      },
+      grid: {
+        show: true,
+        strokeDashArray: 4,
+        padding: {
+          left: 2,
+          right: 2,
+          top: -26
+        },
+      },
+      series: [
+        {
+          name: "This Week Score",
+          data: [9, 10, 8, 9, 6, 8],
+          color: "#1A56DB",
+        },
+        {
+          name: "Last week Score",
+          data: [8, 6, 9, 6, 8, 9],
+          color: "#7E3AF2",
+        },
+      ],
+      legend: {
+        show: false
+      },
+      stroke: {
+        curve: 'smooth'
+      },
+      xaxis: {
+        categories: ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'],
+        labels: {
+          show: true,
+          style: {
+            fontFamily: "Inter, sans-serif",
+            cssClass: 'text-xs font-normal fill-gray-100  fill-gray-100'
+          }
+        },
+        axisBorder: {
+          show: false,
+        },
+        axisTicks: {
+          show: false,
+        },
+      },
+      yaxis: {
+        show: false,
+      },
+    }
+    
+    if (document.getElementById("line-chart") && typeof ApexCharts !== 'undefined') {
+      const chart = new ApexCharts(document.getElementById("line-chart"), options);
+      chart.render();
+    }
+    
+    
+    
+    const getChartOptions = () => {
+      return {
+        series: [26.2, 26.8, 47],
+        colors: ["#1C64F2", "#16BDCA", "#9061F9"],
+        chart: {
+          height: 420,
+          width: "100%",
+          type: "pie",
+        },
+        stroke: {
+          colors: ["white"],
+          lineCap: "",
+        },
+        plotOptions: {
+          pie: {
+            labels: {
+              show: true,
+            },
+            size: "100%",
+            dataLabels: {
+              offset: -25
+            }
+          },
+        },
+        labels: ["Physics", "Chemistry", "Maths"],
+        dataLabels: {
+          enabled: true,
+          style: {
+            fontFamily: "Inter, sans-serif",
+          },
+        },
+        legend: {
+          position: "bottom",
+          fontFamily: "Inter, sans-serif",
+        },
+        yaxis: {
+          labels: {
+            formatter: function (value) {
+              return value + "%"
+            },
+          },
+        },
+        xaxis: {
+          labels: {
+            formatter: function (value) {
+              return value  + "%"
+            },
+          },
+          axisTicks: {
+            show: false,
+          },
+          axisBorder: {
+            show: false,
+          },
+        },
+      }
+    }
+    
+    if (document.getElementById("pie-chart") && typeof ApexCharts !== 'undefined') {
+      const chart = new ApexCharts(document.getElementById("pie-chart"), getChartOptions());
+      chart.render();
+    }
+    
+    let currentCardIndex = 1; // Starting index of the current card
+      const cards = document.querySelectorAll('.card');
+    
+      function slideNext() {
+        if (currentCardIndex < cards.length) {
+          cards[currentCardIndex].classList.add('translate-x-0');
+          cards[currentCardIndex].classList.remove('-translate-x-full');
+          currentCardIndex++;
+        }
+      }
+    
+      function slidePrevious() {
+        if (currentCardIndex > 1) {
+          currentCardIndex--;
+          cards[currentCardIndex].classList.remove('translate-x-0');
+          cards[currentCardIndex].classList.add('-translate-x-full');
+        }
+      }
+    
+      // Example: Trigger sliding with buttons
+      document.getElementById('nextButton').addEventListener('click', slideNext);
+      document.getElementById('previousButton').addEventListener('click', slidePrevious);
+    
+    </script>
+<!-- hero slide -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          spaceBetween: 30,
+          centeredSlides: true,
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      </script>
+</body>
+</html>
