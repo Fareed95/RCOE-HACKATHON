@@ -59,5 +59,10 @@ html,body{
 
 #footer{
   padding-left: 13vw;
+  
+}
 
+
+#footer a{
+  padding-right:1vw;
 }
