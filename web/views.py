@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
-    return render(request,'home.html')
+    return render(request,'landing_page.html')
 
 def mentor_login_view(request):
     # Implement your mentor login logic here
@@ -19,6 +19,11 @@ def apply_for_mentor_view(request):
 @login_required(login_url='login')
 def HomePage(request):
     return render (request,'studentauth/dashboard.html')
+
+
+@login_required(login_url='login')
+def HomePageMentor(request):
+    return render (request,'studentauth/mentor_dash.html')
 
 def SignupPage(request):
     if request.method == 'POST':
@@ -44,10 +49,16 @@ def LoginPage(request):
     if request.method=='POST':
         username=request.POST.get('username')
         pass1=request.POST.get('pass')
+        
         user=authenticate(request,username=username,password=pass1)
         if user is not None:
+            select=request.POST.get('select')
             login(request,user)
-            return redirect('home')
+            if select == 'US':
+                return redirect('studentdash')
+            else :
+                return redirect('mentordash')
+
         else:
             return HttpResponse ("Username or Password is incorrect!!!")
 
