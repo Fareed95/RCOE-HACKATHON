@@ -1,9 +1,9 @@
 
-from django.urls import path
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from .views import index, mentor_login_view, apply_for_mentor_view, SignupPage, LoginPage , HomePage, LogoutPage, HomePageMentor
-
+app_name = 'chat'
 urlpatterns = [
     path('', index, name='home'),
     path('signup/',SignupPage,name='signup'),
@@ -13,6 +13,7 @@ urlpatterns = [
     path('studentdash/',HomePage,name='studentdash'),
     path('mentordash/',HomePageMentor,name='mentordash'),
     path('logout/',LogoutPage,name='logout'),
+    
     
 ]
 

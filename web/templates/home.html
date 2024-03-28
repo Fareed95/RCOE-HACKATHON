@@ -56,21 +56,21 @@
         mymap.on('locationerror', onLocationError);
     </script>
     <div>
-        <form action="{% url 'login' %}" method="get">
+        <form action="{% url 'web:login' %}" method="get">
             <button type="submit">Student Login</button>
         </form>
     </div>
 
     <!-- Div for Mentor Login Button -->
     <div>
-        <form action="{% url 'mentor_login' %}" method="get">
+        <form action="{% url 'web:mentor_login' %}" method="get">
             <button type="submit">Mentor Login</button>
         </form>
     </div>
 
     <!-- Div for Applying for Mentor Button -->
     <div>
-        <form action="{% url 'apply_for_mentor' %}" method="get">
+        <form action="{% url 'web:apply_for_mentor' %}" method="get">
             <button type="submit">Apply for Mentor</button>
         </form>
     </div>
